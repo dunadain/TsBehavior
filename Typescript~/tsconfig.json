@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "typeRoots": [
+      "../../../Assets/Gen/Typing",
+      "./Typing",
+    ], /* Specify multiple folders that act like './node_modules/@types'. */
+    /* Language and Environment */
+    "target": "ESNext", /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
+    "experimentalDecorators": true, /* Enable experimental support for legacy experimental decorators. */
+    "emitDecoratorMetadata": true, /* Emit design-type metadata for decorated declarations in source files. */
+    /* Modules */
+    "module": "ES2022", /* Specify what module code is generated. */
+    "moduleResolution": "node", /* Specify how TypeScript looks up a file from a given module specifier. */
+    /* JavaScript Support */
+    "allowJs": true, /* Allow JavaScript files to be a part of your program. Use the 'checkJS' option to get errors from these files. */
+    /* Emit */
+    "sourceMap": false, /* Create source map files for emitted JavaScript files. */
+    "outDir": "../Runtime/Resources/Js", /* Specify an output folder for all emitted files. */
+    "forceConsistentCasingInFileNames": true, /* Ensure that casing is correct in imports. */
+    /* Type Checking */
+    "strict": true, /* Enable all strict type-checking options. */
+    /* Completeness */
+    "skipLibCheck": true, /* Skip type checking all .d.ts files. */
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "useDefineForClassFields": true,
+    "verbatimModuleSyntax": true,
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "jest.config.mjs",
+    "eslint.config.mjs"
+  ]
+}

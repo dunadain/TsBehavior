@@ -1,0 +1,13 @@
+{
+    "name": "com.maple.tsbehavior",
+    "version": "1.0.0",
+    "displayName": "TsBehavior",
+    "description": "monobehaviour TS版",
+    "author": {
+        "name": "Elendil"
+    },
+    "dependencies": {
+        "com.tencent.puerts.core": "2.2.2",
+        "com.unity.addressables": "1.22.3"
+    }
+}
