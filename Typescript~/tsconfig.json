@@ -15,8 +15,6 @@
     "allowJs": true, /* Allow JavaScript files to be a part of your program. Use the 'checkJS' option to get errors from these files. */
     /* Emit */
     "sourceMap": false, /* Create source map files for emitted JavaScript files. */
-    "declaration": true, /* Generate .d.ts files from TypeScript and JavaScript files in your project. */
-    "declarationDir": "../Typing", /* Specify the output directory for generated declaration files. */
     "outDir": "../Runtime/Resources/Js", /* Specify an output folder for all emitted files. */
     "forceConsistentCasingInFileNames": true, /* Ensure that casing is correct in imports. */
     /* Type Checking */
@@ -29,8 +27,7 @@
     "verbatimModuleSyntax": true,
   },
   "include": [
-    "src/**/*",
-    "../Typing/gameobject-extensions.d.mts"
+    "src/**/*"
   ],
   "exclude": [
     "node_modules",
