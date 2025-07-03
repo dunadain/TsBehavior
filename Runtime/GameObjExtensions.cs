@@ -101,7 +101,7 @@ namespace TsBehavior
                 newComp.jsAwake();
                 newComp.jsOnEnable();
             }
-            return newComp.MyJsComp();
+            return newComp.JsComponent();
         }
 
         public static bool IsNull(this Object o)

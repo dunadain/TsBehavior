@@ -32,7 +32,7 @@ namespace TsBehavior
         // 对应的js对象
         private JSObject _jsComp;
 
-        public JSObject MyJsComp()
+        public JSObject JsComponent()
         {
             return _jsComp;
         }
