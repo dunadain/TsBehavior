@@ -208,10 +208,57 @@ export function tryCall(obj: any, methodName: string, list: any) {
     }
 }
 
-export function isInstanceof(obj: unknown, className: string) {
+function isInstanceof(obj: unknown, className: string) {
     const clazz = nameToClass.get(className);
     if (!clazz) {
         throw new Error(`Class not found: ${className}`);
     }
     return obj instanceof clazz;
 }
+
+Object.defineProperty(CS.UnityEngine.GameObject.prototype, 'getJsComponent', {
+    value: function (clazz: string, includesDescendants = false) {
+        let self = this as CS.UnityEngine.GameObject;
+        const hosts = self.GetMonoBehaviourHosts();
+        let len = hosts.Count;
+        for (let i = 0; i < len; ++i) {
+            const host = hosts.get_Item(i);
+            if (host && !host.IsNull()) {
+                const jsComp = host.JsComponent();
+                if (jsComp) {
+                    if (host.jsClassName === clazz) return jsComp;
+                    if (includesDescendants && isInstanceof(jsComp, clazz)) return jsComp;
+                }
+            }
+        }
+        return null;
+    },
+    writable: false,
+    enumerable: false,
+    configurable: true
+});
+
+Object.defineProperty(CS.UnityEngine.GameObject.prototype, 'getJsComponents', {
+    value: function (clazz: string, includesDescendants = false) {
+        let arr = [];
+        let self = this as CS.UnityEngine.GameObject;
+        const hosts = self.GetMonoBehaviourHosts();
+        let len = hosts.Count;
+        for (let i = 0; i < len; ++i) {
+            const host = hosts.get_Item(i);
+            if (host && !host.IsNull()) {
+                const jsComp = host.JsComponent();
+                if (jsComp) {
+                    if (host.jsClassName === clazz || (includesDescendants && isInstanceof(jsComp, clazz))) {
+                        arr.push(jsComp);
+                    }
+                }
+
+            }
+        }
+        return arr;
+    },
+    writable: false,
+    enumerable: false,
+    configurable: true
+});

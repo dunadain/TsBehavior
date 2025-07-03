@@ -29,7 +29,8 @@
     "verbatimModuleSyntax": true,
   },
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "../Typing/gameobject-extensions.d.mts"
   ],
   "exclude": [
     "node_modules",

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Puerts;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -89,6 +90,12 @@ namespace TsBehavior
                 }
             }
             return list;
+        }
+
+        public static List<JsMonoBehaviorHost> GetMonoBehaviourHosts(this GameObject go)
+        {
+            var hosts = go.GetComponents<JsMonoBehaviorHost>();
+            return hosts.ToList();
         }
 
         public static JSObject AddJsComponent(this GameObject go, string jsClassName)

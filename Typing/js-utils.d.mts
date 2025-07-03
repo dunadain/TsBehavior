@@ -6,5 +6,4 @@ export declare function enumfield(enumType: any): (target: any, propName: string
 export declare function mapleclass(className: string): (constructor: Constructor) => void;
 export declare function createMonoJs(className: string, nativeMonoBehavior: CS.TsBehavior.JsMonoBehaviorHost): any;
 export declare function tryCall(obj: any, methodName: string, list: any): void;
-export declare function isInstanceof(obj: unknown, className: string): boolean;
 export {};
