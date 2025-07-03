@@ -1,0 +1,8 @@
+<UXML xmlns="UnityEngine.UIElements" xmlns:ue="UnityEditor.UIElements">
+    <ListView virtualization-method="DynamicHeight"
+              reorder-mode="Animated"
+              show-add-remove-footer="true"
+              show-border="true"
+              show-foldout-header="true"
+    />
+</UXML>
