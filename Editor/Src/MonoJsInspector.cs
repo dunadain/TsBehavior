@@ -176,7 +176,7 @@ namespace TsBehavior
 
         private void GenJsPropLists(string relativeClassPath, string className)
         {
-            var jsPath = Path.Join(Application.dataPath, "..", "tsscripts");
+            var jsPath = Path.Join(Application.dataPath, "..", "TsScripts");
             var classPath = Path.Join(jsPath, "src", relativeClassPath);
             var ast = TsUtils.GetAstFromPath(classPath);
 
@@ -325,7 +325,7 @@ namespace TsBehavior
 
         private string GetClassPath(string className)
         {
-            var tsSrc = Path.Join(Application.dataPath, "..", "tsscripts");
+            var tsSrc = Path.Join(Application.dataPath, "..", "TsScripts");
             tsSrc = Path.Join(tsSrc, "src");
             var path = _jsClassPathProp.stringValue;
             var index = path.LastIndexOf("/", StringComparison.Ordinal);
