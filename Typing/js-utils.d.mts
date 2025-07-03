@@ -1,0 +1,10 @@
+import type { Constructor } from "./typedef.mjs";
+type PropertyType = typeof CS.UnityEngine.Object | typeof CS.UnityEngine.Color | typeof CS.UnityEngine.Vector2 | typeof CS.UnityEngine.Vector3 | typeof CS.System.Int32 | typeof CS.System.String | typeof CS.System.Boolean | typeof CS.System.Double | typeof CS.System.Single | typeof CS.System.Int64 | typeof CS.UnityEngine.AddressableAssets.AssetReference | typeof CS.TsBehavior.JsMonoBehaviorHost;
+export declare function property(_type: PropertyType): (_target: any, _propName: string) => void;
+export declare function listproperty(_type: PropertyType): (_target: any, _propName: string) => void;
+export declare function enumfield(enumType: any): (target: any, propName: string) => void;
+export declare function mapleclass(className: string): (constructor: Constructor) => void;
+export declare function createMonoJs(className: string, nativeMonoBehavior: CS.TsBehavior.JsMonoBehaviorHost): any;
+export declare function tryCall(obj: any, methodName: string, list: any): void;
+export declare function isInstanceof(obj: unknown, className: string): boolean;
+export {};
