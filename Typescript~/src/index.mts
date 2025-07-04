@@ -9,6 +9,6 @@ let maple = global.maple = global.maple || {};
 maple.MonoBehaviorJs = MonoBehaviorJs;
 maple.arrayUtils = arrayUtils;
 global.property = property;
-global.maple = mapleclass;
+global.mapleclass = mapleclass;
 global.listProperties = listproperty;
 global.enumfield = enumfield;
