@@ -15,6 +15,17 @@ namespace TsBehavior
         public Action<float, float> jsUpdate;
         public Action<float, float> jsLateUpdate;
 
+        public JsEngine(JsEnv jsEnv)
+        {
+            _jsEnv = jsEnv;
+            _jsEnv.ExecuteModule("Js/array-utils.mjs");
+            _jsEnv.ExecuteModule("Js/js-utils.mjs");
+            _jsEnv.ExecuteModule("Js/mono-behavior-js.mjs");
+            _jsEnv.ExecuteModule("Js/scheduler.mjs");
+            _jsEnv.ExecuteModule("Js/timer-pool.mjs");
+            _jsEnv.ExecuteModule("Js/index.mjs");
+        }
+
         private Func<string, JsMonoBehaviorHost, JSObject> _createJs;
 
         public JSObject CreateJsMono(string jsClassName, JsMonoBehaviorHost host)
