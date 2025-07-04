@@ -20,8 +20,8 @@ namespace TsBehavior
         private SerializedProperty _jsClassPathProp;
         private VisualElement customInspectorContainer;
 
-        [SerializeField] private VisualTreeAsset monoInspectorXML;
-        [SerializeField] private VisualTreeAsset listViewXML;
+        // [SerializeField] private VisualTreeAsset monoInspectorXML;
+        // [SerializeField] private VisualTreeAsset listViewXML;
 
         public override VisualElement CreateInspectorGUI()
         {
@@ -32,6 +32,7 @@ namespace TsBehavior
             _monoListProperties = serializedObject.FindProperty("listProperties");
 
             var myInspector = new VisualElement();
+            var monoInspectorXML = Resources.Load<VisualTreeAsset>("mono_js_inspector");
             monoInspectorXML.CloneTree(myInspector);
             customInspectorContainer = myInspector.Q("Custom_Inspector");
 
@@ -93,6 +94,7 @@ namespace TsBehavior
             for (var i = 0; i < size; ++i)
             {
                 var jsProp = _jsListProperties[i];
+                var listViewXML = Resources.Load<VisualTreeAsset>("js_property_list_view");
                 var templateContainer = listViewXML.CloneTree();
                 var listView = templateContainer.Q<ListView>();
 
