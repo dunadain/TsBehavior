@@ -1,5 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <ui:Box style="flex-direction: row; align-items: center; justify-content: space-around;">
-        <Editor.JsInspector.CustomFields.String2Vector2Field style="flex-grow: 2;" />
+        <TsBehavior.String2Vector2Field style="flex-grow: 2;" />
     </ui:Box>
 </ui:UXML>
