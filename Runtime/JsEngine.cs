@@ -19,7 +19,7 @@ namespace TsBehavior
 
         public JSObject CreateJsMono(string jsClassName, JsMonoBehaviorHost host)
         {
-            _createJs ??= _jsEnv.ExecuteModule<Func<string, JsMonoBehaviorHost, JSObject>>("Js/js-utils.mjs", "createMonoJs");
+            _createJs ??= _jsEnv.ExecuteModule<Func<string, JsMonoBehaviorHost, JSObject>>("tsbehavior/js-utils.mjs", "createMonoJs");
             return _createJs(jsClassName, host);
         }
 
@@ -29,7 +29,7 @@ namespace TsBehavior
         {
             get
             {
-                _trycallFun ??= _jsEnv.ExecuteModule<Action<JSObject, string, object[]>>("Js/js-utils.mjs", "tryCall");
+                _trycallFun ??= _jsEnv.ExecuteModule<Action<JSObject, string, object[]>>("tsbehavior/js-utils.mjs", "tryCall");
                 return _trycallFun;
             }
         }
@@ -37,14 +37,14 @@ namespace TsBehavior
         public void Init(JsEnv jsEnv)
         {
             _jsEnv = jsEnv;
-            _jsEnv.ExecuteModule("Js/array-utils.mjs");
-            _jsEnv.ExecuteModule("Js/js-utils.mjs");
-            _jsEnv.ExecuteModule("Js/mono-behavior-js.mjs");
-            _jsEnv.ExecuteModule("Js/scheduler.mjs");
-            _jsEnv.ExecuteModule("Js/timer-pool.mjs");
-            _jsEnv.ExecuteModule("Js/index.mjs");
+            _jsEnv.ExecuteModule("tsbehavior/array-utils.mjs");
+            _jsEnv.ExecuteModule("tsbehavior/js-utils.mjs");
+            _jsEnv.ExecuteModule("tsbehavior/mono-behavior-js.mjs");
+            _jsEnv.ExecuteModule("tsbehavior/scheduler.mjs");
+            _jsEnv.ExecuteModule("tsbehavior/timer-pool.mjs");
+            _jsEnv.ExecuteModule("tsbehavior/index.mjs");
 
-            var initScheduler = _jsEnv.ExecuteModule<Action<JsEngine>>("Js/scheduler.mjs", "initScheduler");
+            var initScheduler = _jsEnv.ExecuteModule<Action<JsEngine>>("tsbehavior/scheduler.mjs", "initScheduler");
             initScheduler(this);
         }
 
